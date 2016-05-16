@@ -5,5 +5,6 @@ import (
 )
 
 func init() {
-	initialization.Initialize(AppEngineLog{}, AppEngineContextFactory{}, AppEngineClientFactory{}, AppengineWorkerFactory{})
+	webApiInitializer := initialization.NewWebApiInitializer(AppEngineLog{}, AppEngineContextFactory{}, AppEngineClientFactory{}, AppengineWorkerFactory{})
+	webApiInitializer.Initialize()
 }
