@@ -20,8 +20,8 @@ type AppEngineBackgroundWorker struct {
 	delayedFunction *delay.Function
 }
 
-func (worker AppEngineBackgroundWorker) DoWork(r *http.Request) error {
-	return worker.delayedFunction.Call(appengine.NewContext(r))
+func (worker AppEngineBackgroundWorker) DoWork(ctx context.Context) error {
+	return worker.delayedFunction.Call(ctx)
 }
 
 type AppEngineContextFactory struct{}
